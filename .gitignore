@@ -1,0 +1,6 @@
+# .gitignore
+
+.bash_local_settings.bash
+.zsh_local_settings.zsh
+
+.DS_Store

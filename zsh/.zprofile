@@ -4,6 +4,13 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
+#
+
+
+# Source .bash_profile
+if [[ -f ~/.bash_profile ]]; then
+	source ~/.bash_profile
+fi
 
 #
 # Browser
@@ -44,6 +51,7 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
+  $HOME/.nodebrew/current/bin # brew install nodebrew
   $path
 )
 

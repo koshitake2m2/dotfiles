@@ -14,7 +14,7 @@ set fileformats=unix,dos,mac
 set mouse=a
 " alias "
 let $BASH_ENV="~/.bashrc"
-" ctags
+" ctags 
 set tags=./tags
 nnoremap <C-]> g<C-]>
 
@@ -51,11 +51,11 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-noremap sh <C-w>h
-noremap sj <C-w>j
-noremap sk <C-w>k
-noremap sl <C-w>l
-noremap sw <C-w>w
+noremap sh <C-w>h 
+noremap sj <C-w>j 
+noremap sk <C-w>k 
+noremap sl <C-w>l 
+noremap sw <C-w>w 
 
 " end normal mode --------------------------
 
@@ -66,8 +66,9 @@ inoremap <Up> <Nop>
 inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
-inoremap <Tab> <C-n>
-inoremap <S-Tab> <C-p>
+inoremap <S-Tab> <BS><BS><BS><BS>
+" inoremap <Tab> <C-n>
+" inoremap <S-Tab> <C-p>
 
 " insert mode mac-like "
 inoremap <C-p> <C-o>gk
@@ -116,17 +117,17 @@ command Hello echo 'hello, world!'
 " 	if &compatible
 " 		set nocompatible               " Be iMproved
 " 	endif
-"
+" 	
 " 	" Required:
 " 	set runtimepath+=~/.vim/bundle/neobundle.vim/
-"
+" 	
 " 	" Required:
 " 	call neobundle#begin(expand('~/.vim/bundle'))
-"
+" 	
 " 	" Let NeoBundle manage NeoBundle
 " 	" Required:
 " 	NeoBundleFetch 'Shougo/neobundle.vim'
-"
+" 	
 " 	" Add or remove your Bundles here:
 " 	NeoBundle 'Shougo/neosnippet.vim'
 " 	NeoBundle 'Shougo/neosnippet-snippets'
@@ -137,38 +138,38 @@ command Hello echo 'hello, world!'
 " 	NeoBundle 'scrooloose/syntastic'
 " 		let g:syntastic_python_checkers = ['pyflakes']
 " 	NeoBundle 'davidhalter/jedi-vim'
-"
+" 	
 " 	" You can specify revision/branch/tag.
 " 	NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-"
+" 	
 " 	" Required:
 " 	call neobundle#end()
 " 	" Required:
 " 	filetype plugin indent on
-"
+" 	
 " 	" If there are uninstalled bundles found on startup,
 " 	" this will conveniently prompt you to install them.
 " 	NeoBundleCheck
 " "End NeoBundle Scripts-------------------------
-"
+" 
 " autocmd FileType html setl filetype=htmldjango
-"
-"
+" 
+" 
 " command -nargs=1 WE call s:WE_Func(<q-args>)
 " set nocompatible
 "
 " filetype plugin indent off
-"
+" 
 " if has('vim_starting')
 "   set runtimepath+=~/.vim/bundle/neobundle.vim
 "   call neobundle#rc(expand('~/.vim/bundle'))
-" endif
-"
+" endif 
+" 
 " NeoBundleFetch 'Shougo/neobundle.vim'
-"
+" 
 " NeoBundle 'Shougo/unite.vim'
 " NeoBundle 'Shougo/neosnippet.vim'
-"
+" 
 " filetype plugin indent on
 
 
@@ -241,3 +242,41 @@ let &cpo = s:cpo_save
 unlet s:cpo_save
 
 " vim: ts=8
+
+" Note: Skip initialization for vim-tiny or vim-small.
+ if 0 | endif
+
+ if &compatible
+   set nocompatible               " Be iMproved
+ endif
+
+ " Required:
+ set runtimepath^=~/.vim/bundle/neobundle.vim/
+
+ " Required:
+ call neobundle#begin(expand('~/.vim/bundle/'))
+
+ " Let NeoBundle manage NeoBundle
+ " Required:
+ NeoBundleFetch 'Shougo/neobundle.vim'
+ NeoBundle 'plasticboy/vim-markdown'
+ NeoBundle 'kannokanno/previm'
+ NeoBundle 'tyru/open-browser.vim'
+
+ " My Bundles here:
+ " Refer to |:NeoBundle-examples|.
+ " Note: You don't set neobundle setting in .gvimrc!
+
+ call neobundle#end()
+
+ " Required:
+ filetype plugin indent on
+
+ " If there are uninstalled bundles found on startup,
+ " this will conveniently prompt you to install them.
+ NeoBundleCheck
+
+ 
+" markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+let g:vim_markdown_folding_disabled = 1

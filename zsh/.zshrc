@@ -1,6 +1,9 @@
+#!/bin/zsh
+# .zshrc
 #
 # Executes commands at the start of an interactive session.
 #
+# Inherited zsh settings...
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
@@ -15,14 +18,19 @@ if [[ -f ~/.zsh_local_settings.zsh ]]; then
 	source ~/.zsh_local_settings.zsh
 fi
 
+# Source .bash_local_settings.bash
+if [[ -f ~/.bash_local_settings.bash ]]; then
+	source ~/.bash_local_settings.bash
+fi
+
 # Source .bash_aliases.bash
 if [[ -f ~/.bash_aliases.bash ]]; then
-	. ~/.bash_aliases.bash
+	source ~/.bash_aliases.bash
 fi
 
 # Source .bash_functions.bash
 if [[ -f ~/.bash_functions.bash ]]; then
-	. ~/.bash_functions.bash
+	source ~/.bash_functions.bash
 fi
 
 
@@ -39,12 +47,8 @@ precmd() {
 # umask 077
 umask 077
 
-function make_tex_pdf(){
-    # $1 = input.md, $2 = output.md
-    docker run -it --rm -v `pwd`:/workspace kumassy/alpine-pandoc-ja pandoc $1 -f markdown -o $2 --pdf-engine=lualatex
-}
 
-# 履歴
+# --- コマンド履歴 ---
 # 履歴ファイルの保存先
 export HISTFILE=${HOME}/.zsh_history
 
@@ -62,7 +66,15 @@ setopt share_history
 
 # 開始と終了を記録
 setopt EXTENDED_HISTORY
+# --- end コマンド履歴 ---
 
+# ---  コマンド履歴 peco ---
+# brew install peco
+# usage: 
+# ctrl + r: show history
+# ctrl + p: previous
+# ctrl + n: next
+# esc     : exit
 function peco-history-selection() {
     BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
     CURSOR=$#BUFFER
@@ -71,5 +83,6 @@ function peco-history-selection() {
 
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
+# --- end コマンド履歴 peco ---
 
 echo "read .zshrc"

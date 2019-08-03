@@ -15,14 +15,20 @@ for target_dir in ${target_dirs}; do
     echo "target : " ${target_dir}
     mkdir ${backup_dir}/${target_dir}
     for file in `ls -A ./${target_dir}`; do
-        echo $PWD/${target_dir}/$file;
-        move=$PWD/${target_dir}/$file
+        from=$PWD/${target_dir}/$file
         to=$HOME/$file
         if [[ -e $to ]]; then
+            if [[ $(diff -r $from $to) == '' ]]; then
+                continue
+            fi
             mv $to ${backup_dir}/${target_dir}/
         fi
-        cp -r $move $to
+        cp -r $from $to
+        echo $from " was copied";
     done
+    if [[ ! -n $(ls -A ${backup_dir}/${target_dir}) ]]; then
+        rm -rf ${backup_dir}/${target_dir}
+    fi
 done
 
 if [[ ! -n $(ls -A ${backup_dir}) ]]; then

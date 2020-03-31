@@ -1,10 +1,7 @@
 #!/bin/bash
 # settings
 
-target_dirs=""
-target_dirs="${target_dirs} bash"
-target_dirs="${target_dirs} zsh"
-target_dirs="${target_dirs} vim"
+target_dirs="home"
 
 backup_dir="$PWD/backup/$(date +"%Y%m%d_%H%M%S").bak"
 mkdir -p ${backup_dir}
@@ -32,7 +29,15 @@ for target_dir in ${target_dirs}; do
 done
 
 if [[ ! -n $(ls -A ${backup_dir}) ]]; then
-    echo remove ${backup_dir}
+    echo No backup required...
     rm -rf ${backup_dir}
+fi
+
+# zshなら実行
+if [[ $(basename $SHELL) = "zsh" \
+    || -f ./only_zsh_settings.zsh ]]; then
+    echo "";
+    echo "source ./only_zsh_settings.zsh";
+    source ./only_zsh_settings.zsh
 fi
 

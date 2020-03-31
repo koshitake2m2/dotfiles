@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/zsh
 # settings
 
-target_dirs=""
-target_dirs="${target_dirs} bash"
-target_dirs="${target_dirs} zsh"
-target_dirs="${target_dirs} vim"
+target_dirs="home"
+#target_dirs="${target_dirs} bash"
+#target_dirs="${target_dirs} zsh"
+#target_dirs="${target_dirs} vim"
 
 backup_dir="$PWD/backup/$(date +"%Y%m%d_%H%M%S").bak"
 mkdir -p ${backup_dir}
@@ -34,5 +34,15 @@ done
 if [[ ! -n $(ls -A ${backup_dir}) ]]; then
     echo remove ${backup_dir}
     rm -rf ${backup_dir}
+fi
+
+# Source Prezto.
+# zsh uncomment
+if [[ $1 == 'prezto' ]]; then
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+    setopt EXTENDED_GLOB
+    for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+        ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+    done
 fi
 

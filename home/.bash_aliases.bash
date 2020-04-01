@@ -15,8 +15,8 @@ alias cmacs='emacs -nw'
 alias evil='emacs -f evil-mode'
 
 if [[ "$(uname)" == 'Darwin' ]]; then
-    alias vpn-connect='scutil --nc start "VPN (Cisco IPSec)"'
-    alias vpn-disconnect='scutil --nc stop "VPN (Cisco IPSec)"'
+    # alias vpn-connect='scutil --nc start "VPN (Cisco IPSec)"'
+    # alias vpn-disconnect='scutil --nc stop "VPN (Cisco IPSec)"'
     # open
     alias firefox='open -a/Applications/Firefox.app'
     alias safari='open -a /Applications/Safari.app'
@@ -24,6 +24,7 @@ if [[ "$(uname)" == 'Darwin' ]]; then
     alias slack='open -a /Applications/Slack.app'
     alias atom='open -a /Applications/Atom.app'
     alias sublime='open -a /Applications/Sublime\ Text.app'
+    alias vscode='open -a /Applications/Visual\ Studio\ Code.app'
     alias f='open .'
 
 elif [[ "$(uname)" == 'Linux' ]]; then

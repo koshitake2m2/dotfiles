@@ -5,11 +5,6 @@ if [[ -f /etc/bashrc ]]; then
 	. /etc/bashrc
 fi
 
-# Source .bash_local_settings.bash
-if [[ -f ~/.bash_local_settings.bash ]]; then
-	. ~/.bash_local_settings.bash
-fi
-
 # Source .bash_aliases.bash
 if [[ -f ~/.bash_aliases.bash ]]; then
 	. ~/.bash_aliases.bash
@@ -39,8 +34,12 @@ fi
 # umask 077
 umask 077
 
-# alias
+# expand_aliases
 shopt -s expand_aliases
-# prompt
+
+# Source .bash_local_settings.bash
+if [[ -f ~/.bash_local_settings.bash ]]; then
+	. ~/.bash_local_settings.bash
+fi
 
 echo "read .bashrc"

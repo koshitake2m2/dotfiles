@@ -1,7 +1,6 @@
 #!/bin/bash
 # .bash_aliases
 
-alias ls='ls -G'
 alias ll='ls -lh '
 alias l.='ls -d .*'
 alias ll.='ls -dlh '
@@ -15,6 +14,7 @@ alias cmacs='emacs -nw'
 alias evil='emacs -f evil-mode'
 
 if [[ "$(uname)" == 'Darwin' ]]; then
+    alias ls='ls -G'
     # alias vpn-connect='scutil --nc start "VPN (Cisco IPSec)"'
     # alias vpn-disconnect='scutil --nc stop "VPN (Cisco IPSec)"'
     # open
@@ -28,7 +28,7 @@ if [[ "$(uname)" == 'Darwin' ]]; then
     alias f='open .'
 
 elif [[ "$(uname)" == 'Linux' ]]; then
-    :
+    alias ls='ls --color'
 else
     :
 fi

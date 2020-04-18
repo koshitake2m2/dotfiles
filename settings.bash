@@ -35,7 +35,7 @@ fi
 
 # zshなら実行
 if [[ $(basename $SHELL) = "zsh" \
-    || -f ./only_zsh_settings.zsh ]]; then
+    && -f ./only_zsh_settings.zsh ]]; then
     echo "";
     echo "source ./only_zsh_settings.zsh";
     source ./only_zsh_settings.zsh

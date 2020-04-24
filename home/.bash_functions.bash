@@ -77,9 +77,8 @@ if [[ "$(uname)" == 'Darwin' ]]; then
         if [[ ! -f "$1" ]]; then touch "$1"; fi
         open -a TextEdit "$1"
     }
-    OS='Mac'
 elif [[ "$(uname)" == 'Linux' ]]; then
-    OS='Linux'
+    :
 else
-    OS='Other'
+    :
 fi

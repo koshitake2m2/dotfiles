@@ -16,12 +16,14 @@ if [[ -f ~/.bash_functions.bash ]]; then
 fi
 
 # Source git-completion
-if [[ -f ~/.git-completion.bash ]]; then
+if [[ $(basename $SHELL) = "bash" \
+    && -f ~/.git-completion.bash ]]; then
 	. ~/.git-completion.bash
 fi
 
 # Source git-prompt
-if [[ -f ~/.git-prompt.sh ]]; then
+if [[ $(basename $SHELL) = "bash" \
+    && -f ~/.git-prompt.sh ]]; then
 	. ~/.git-prompt.sh
     export PS1='\n\[\e[33m\]\w \[\e[31m\]$(__git_ps1)\[\e[0m\]\n> '
     GIT_PS1_SHOWDIRTYSTATE=true

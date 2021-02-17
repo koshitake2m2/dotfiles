@@ -10,24 +10,71 @@
 
 
 # Usage
-$ git clone https://github.com/koshitake2m2/my_setup.git  
-$ cd my_setup  
-$ bash settings.bash  
-$ bash mac_install.bash
+```bash
+## githubの設定を済ませてから
+git clone https://github.com/koshitake2m2/my_setup.git
+cd my_setup
 
-# その他セットアップ
+# if you use linuxOS
+bash settings.bash
+
+# if you use macOS
+zsh settings.bash prezto
+zsh mac_install.bash
+```
+
+# その他共通セットアップ
 以下、その他セットアップ
 
-## 端末 Iceberg
-https://gist.github.com/cocopon/a04be63f5e0856daa594702299c13160 (2019-7-17)  
-$ git clone https://gist.github.com/a04be63f5e0856daa594702299c13160.git  
+## github
+```bash
+# 秘密鍵のパス: $HOME/.ssh/id_rsa_github
+ssh-keygen -t rsa -b 4096 -C "hello@sample.com" < <(echo $HOME/.ssh/id_rsa_github)
+
+cat <<-EOF >> $HOME/.ssh/config
+Host github
+  HostName github.com
+  IdentityFile ~/.ssh/id_rsa_github
+  User git
+EOF
+
+ssh-add $HOME/.ssh/id_rsa_github
+# githubに公開鍵を追加
+cat .ssh/id_rsa_github.pub | pbcopy
+ssh -T git@github.com
+
+git config --global user.name "username"
+git config --global user.email hello@sample.com
+
+cat <<-EOF >> $HOME/.gitconfig
+[url "github:"]
+    InsteadOf = https://github.com/
+    InsteadOf = git@github.com
+EOF
+```
+
+# その他macセットアップ
+
+## キーボード・トラックパッド・アクセシビリティ
+- ライブ変換
+- Fnキー
+- 三本指ドラッグ
+- キーリピート
+- バックスラッシュ
 
 ## docker
 $ open -a /Applications/Docker.app
 サインイン
 
+## ターミナル
+シェルの終了時、正常終了でタブを閉じる
+カラーはIcebergをデフォルトにする
 
-## 参考
+## 各種インストール
+- chrome
+- slack
+
+# 参考
 以下、参考サイトです。
 
 ### git-prompt, git-completion

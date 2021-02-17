@@ -9,6 +9,7 @@ alias df='df -h'
 alias du='\du -sh'
 alias du.='\du -sh $(ls -d .*|grep -v ^.$|grep -v ^..$)'
 alias path='echo $PATH | tr ":" "\n"'
+alias python='/usr/local/bin/python3'
 
 alias cmacs='emacs -nw'
 alias evil='emacs -f evil-mode'

@@ -16,11 +16,12 @@
 anyenv install --force-init \
     && eval "$(anyenv init -)"
     && exec $SHELL -l
-    && anyenv install nodenv
+    && anyenv install nodenv pyenv
     && exec $SHELL -l
     && nodenv install 14.15.5
     && nodenv global 14.15.5
-    && anyenv install pyenv
-    && exec $SHELL -l
     && pyenv install 3.9.1
     && pyenv global 3.9.1
+    && exec $SHELL -l
+    && npm install -g yarn
+

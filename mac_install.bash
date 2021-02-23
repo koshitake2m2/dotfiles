@@ -13,15 +13,17 @@
     && echo "homebrew done..."
 
 # anyenv
+# NOTE: exec $SHELLで中断してしまうかもしれない
 anyenv install --force-init \
-    && eval "$(anyenv init -)"
+    && eval "$(anyenv init -)" \
     && exec $SHELL -l
-    && anyenv install nodenv pyenv
+anyenv install nodenv \
+    && anyenv install pyenv \
     && exec $SHELL -l
-    && nodenv install 14.15.5
-    && nodenv global 14.15.5
-    && pyenv install 3.9.1
-    && pyenv global 3.9.1
-    && exec $SHELL -l
+nodenv install 14.15.5 \
+    && nodenv global 14.15.5 \
     && npm install -g yarn
+pyenv install 3.9.1 \
+    && pyenv global 3.9.1 \
+    && exec $SHELL -l
 

@@ -2,10 +2,12 @@
 # install
 
 # homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" \
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
+    && eval "$(/opt/homebrew/bin/brew shellenv)" \
     && brew install cask \
     && brew install peco \
     && brew install vim \
+    && brew install google-chrome \
     && brew install anyenv \
     && brew install visual-studio-code \
     && brew install docker \

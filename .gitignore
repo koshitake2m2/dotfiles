@@ -7,3 +7,5 @@ backup/*
 .DS_Store
 
 tmp/*
+!tmp/.keep
+

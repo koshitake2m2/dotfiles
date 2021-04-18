@@ -71,5 +71,7 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
 fi
 
 eval "$(anyenv init -)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo "read .zprofile"
+

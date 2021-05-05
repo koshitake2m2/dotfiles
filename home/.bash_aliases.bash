@@ -9,7 +9,6 @@ alias df='df -h'
 alias du='\du -sh'
 alias du.='\du -sh $(ls -d .*|grep -v ^.$|grep -v ^..$)'
 alias path='echo $PATH | tr ":" "\n"'
-alias python='/usr/local/bin/python3'
 
 alias cmacs='emacs -nw'
 alias evil='emacs -f evil-mode'
@@ -24,7 +23,6 @@ if [[ "$(uname)" == 'Darwin' ]]; then
     alias chrome='open -a /Applications/Google\ Chrome.app'
     alias slack='open -a /Applications/Slack.app'
     alias atom='open -a /Applications/Atom.app'
-    alias sublime='open -a /Applications/Sublime\ Text.app'
     alias vscode='open -a /Applications/Visual\ Studio\ Code.app'
     alias f='open .'
 

@@ -15,13 +15,16 @@
     && echo "homebrew done..."
 
 # anyenv
-# NOTE: exec $SHELLで中断してしまうかもしれない
+# TODO: `exec $SHELL -l`で中断してしまうので要検討.
+# NOTE: `$HOME/.config/anyenv/anyenv-install`が存在する場合, 以下のコマンドは通らない.
 anyenv install --force-init \
     && eval "$(anyenv init -)" \
     && exec $SHELL -l
+# TODO: 以下, 手入力.
 anyenv install nodenv \
     && anyenv install pyenv \
     && exec $SHELL -l
+# TODO: 以下, 手入力.
 nodenv install 14.15.5 \
     && nodenv global 14.15.5 \
     && npm install -g yarn

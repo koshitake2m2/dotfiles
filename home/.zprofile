@@ -49,13 +49,13 @@ typeset -gU cdpath fpath mailpath path
 # )
 
 # Set the list of directories that Zsh searches for programs.
-eval "$(anyenv init -)"
-eval "$(/opt/homebrew/bin/brew shellenv)"
 path=(
   /usr/local/{bin,sbin}
   $HOME/.anyenv/bin
   $path
 )
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(anyenv init -)"
 
 #
 # Less

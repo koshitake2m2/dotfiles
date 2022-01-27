@@ -28,8 +28,10 @@ zsh mac_install.bash
 
 ## github
 ```bash
+user_name="hello"
+mail_address="hello@sample.com"
 # 秘密鍵のパス: $HOME/.ssh/id_rsa_github
-ssh-keygen -t rsa -b 4096 -C "hello@sample.com" < <(echo $HOME/.ssh/id_rsa_github)
+ssh-keygen -t rsa -b 4096 -C $mail_address < <(echo $HOME/.ssh/id_rsa_github)
 
 cat <<-EOF >> $HOME/.ssh/config
 Host github
@@ -41,10 +43,12 @@ EOF
 ssh-add $HOME/.ssh/id_rsa_github
 # githubに公開鍵を追加
 cat .ssh/id_rsa_github.pub | pbcopy
+
+
 ssh -T git@github.com
 
-git config --global user.name "username"
-git config --global user.email hello@sample.com
+git config --global user.name $user_name
+git config --global user.email $mail_address
 
 cat <<-EOF >> $HOME/.gitconfig
 [url "github:"]
@@ -73,8 +77,8 @@ EOF
 - 「バッテリー」の割合(%)を表示
 
 ## docker
-$ open -a /Applications/Docker.app
-サインイン
+1. https://docs.docker.com/desktop/mac/install/ からインストール
+2. 開いてサインイン
 
 ## ターミナル
 シェルの終了時、正常終了でタブを閉じる

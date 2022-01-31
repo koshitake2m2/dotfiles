@@ -77,6 +77,17 @@ EOF
 - 「Bluetooth」をメニューバーに表示
 - 「バッテリー」の割合(%)を表示
 
+## Finderの設定
+
+```bash
+# .DS_Storeを生成しない.
+defaults write com.apple.desktopservices DSDontWriteNetworkStores True
+# 隠しファイルを表示するようにする.
+defaults write com.apple.finder AppleShowAllFiles TRUE
+killall Finder
+```
+
+
 ## docker
 1. https://docs.docker.com/desktop/mac/install/ からインストール
 2. 開いてサインイン

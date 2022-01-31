@@ -1,0 +1,126 @@
+" setting "
+"
+
+"""""""""""
+set multiple-cursors
+map <C-N>  <A-N>
+map <C-P>  <A-P>
+map <C-X>  <A-X>
+map g<C-N> g<A-N>
+"""""""""""
+
+" title "
+set title
+let &t_ti .= "\e[22;0t"
+let &t_te .= "\e[23;0t"
+
+" encode "
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
+" mouse "
+set mouse=a
+" alias "
+let $BASH_ENV="~/.bashrc"
+" ctags 
+set tags=./tags
+nnoremap <C-]> g<C-]>
+
+" { } "
+set showmatch
+
+" color "
+syntax on
+
+" line "
+set number
+" set cursorline
+set virtualedit=onemore
+" set scrolloff "
+set scrolloff=5
+" set backspace "
+set backspace=indent,eol,start
+" set hlsearch
+set hlsearch
+" set multi cursors
+set multiple-cursors
+
+" indent "
+set expandtab
+set tabstop=4
+set smartindent
+set autoindent
+set shiftwidth=4
+
+" key map "
+" inoremap <ESC> <ESC>:set iminsert=2<CR>
+
+" normal mode --------------------------
+noremap <C-h> <BS>
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+noremap <C-a> 0
+"noremap sh <C-w>h
+noremap sh :action PrevSplitter<CR>
+noremap sj <C-w>j
+noremap sk <C-w>k 
+"noremap sl <C-w>l
+noremap sl :action NextSplitter<CR>
+noremap sw <C-w>w
+noremap sn gt
+noremap sp gT
+noremap R :action RenameElement<CR>
+noremap <M-S-r> :action ChangeSignature<CR>
+
+" end normal mode --------------------------
+
+
+" insert mode ----------------------
+inoremap jj <Esc>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+inoremap <S-Tab> <BS><BS><BS><BS>
+inoremap ¥ \
+inoremap \ ¥
+" inoremap <Tab> <C-n>
+" inoremap <S-Tab> <C-p>
+
+" insert mode mac-like "
+inoremap <C-p> <C-o>gk
+inoremap <C-n> <C-o>gj
+inoremap <C-b> <C-o>h
+inoremap <C-f> <C-o>l
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>A
+inoremap <C-d> <C-o>x
+inoremap <C-k> <C-o>d$
+inoremap <C-y> <C-o>p
+
+" end insert mode =====================
+
+" command-line mode ------------
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+
+" end command-line mode ========
+
+" \n "
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
+
+" save and quit "
+nnoremap ZZ <Nop>
+
+" no save and quit "
+nnoremap ZQ <Nop>
+
+" ex mode "
+nnoremap Q <Nop>
+

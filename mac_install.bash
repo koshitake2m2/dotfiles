@@ -2,12 +2,14 @@
 # install
 
 # homebrew
+# TODO: インストールに失敗したアプリをリストアップするように検討.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
     && eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install cask
 brew install peco
 brew install vim
 brew install google-chrome
+brew install vivaldi
 brew install slack
 brew install anyenv
 brew install visual-studio-code

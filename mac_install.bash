@@ -15,6 +15,9 @@ brew install anyenv
 brew install visual-studio-code
 brew install docker
 brew install intellij-idea-ce
+brew tap homebrew/cask-versions
+brew install adoptopenjdk8
+brew install lampepfl/brew/dotty
 echo "homebrew done..."
 
 # anyenv
@@ -27,8 +30,10 @@ cat <<EOF
 # TODO: 以下, 手入力.
 anyenv install nodenv \
     && anyenv install pyenv \
+    && anyenv install jenv \
     && exec $SHELL -l
 # TODO: 以下, 手入力.
+jenv add $(/usr/libexec/java_home -v "1.8")
 nodenv install 14.15.5 \
     && nodenv global 14.15.5 \
     && npm install -g yarn

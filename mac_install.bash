@@ -17,7 +17,7 @@ brew install docker
 brew install intellij-idea-ce
 brew tap homebrew/cask-versions
 brew install adoptopenjdk8
-brew install lampepfl/brew/dotty
+brew install discord
 echo "homebrew done..."
 
 # anyenv

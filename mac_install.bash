@@ -18,6 +18,8 @@ brew install intellij-idea-ce
 brew tap homebrew/cask-versions
 brew install adoptopenjdk8
 brew install discord
+brew install coursier/formulas/coursier && cs setup
+
 echo "homebrew done..."
 
 # anyenv

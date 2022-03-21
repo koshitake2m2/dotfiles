@@ -53,6 +53,7 @@ path=(
   /usr/local/{bin,sbin}
   $HOME/.anyenv/bin
   $path
+  /Users/koshi/Library/Application Support/Coursier/bin
 )
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(anyenv init -)"

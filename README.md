@@ -2,25 +2,18 @@
 
 自分用にbashやzsh等をセットアップします。主に設定ファイルをホームディレクトリ以下に置くスクリプトです。  
 
-**以下をセットアップ**
-- bash
-- zsh
-- vim
-- docker
-
-
 # Usage
 ```bash
 ## githubの設定を済ませてから
-git clone https://github.com/koshitake2m2/my_setup.git
-cd my_setup
+git clone https://github.com/koshitake2m2/dotfiles.git
+cd dotfiles
 
 # if you use linuxOS
 bash settings.bash
 
 # if you use macOS
 zsh settings.bash prezto
-zsh mac_install.bash
+# zsh mac_install.bash # 調整中のためこのファイルを見ながら手動でインストール…
 ```
 
 # その他共通セットアップ
@@ -30,6 +23,7 @@ zsh mac_install.bash
 ```bash
 user_name="hello"
 mail_address="hello@sample.com"
+
 # 秘密鍵のパス: $HOME/.ssh/id_rsa_github
 ssh-keygen -t rsa -b 4096 -C $mail_address < <(echo $HOME/.ssh/id_rsa_github)
 

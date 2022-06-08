@@ -9,3 +9,4 @@ backup/*
 tmp/*
 !tmp/.keep
 
+Brewfile*.lock.json

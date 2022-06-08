@@ -5,6 +5,13 @@
 # TODO: インストールに失敗したアプリをリストアップするように検討.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
     && eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# brew bundle 経由の場合
+# NOTE: `brew bundle dump` でBrewfileをdumpできる
+brew bundle --file=Brewfile_work
+cs setup
+
+# brew install手作業の場合
 brew install cask
 brew install peco
 brew install vim
@@ -36,6 +43,9 @@ anyenv install nodenv \
     && exec $SHELL -l
 # TODO: 以下, 手入力.
 jenv add $(/usr/libexec/java_home -v "1.8")
+jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
+jenv global corretto64-1.8.0.332
+
 nodenv install 14.15.5 \
     && nodenv global 14.15.5 \
     && npm install -g yarn

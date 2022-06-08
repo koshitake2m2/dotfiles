@@ -27,7 +27,7 @@ mail_address="hello@sample.com"
 # 秘密鍵のパス: $HOME/.ssh/id_rsa_github
 ssh-keygen -t rsa -b 4096 -C $mail_address < <(echo $HOME/.ssh/id_rsa_github)
 
-cat <<-EOF >> $HOME/.ssh/config
+cat <<-EOF > $HOME/.ssh/config
 Host github
   HostName github.com
   IdentityFile ~/.ssh/id_rsa_github

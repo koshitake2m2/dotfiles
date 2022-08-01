@@ -44,6 +44,7 @@ ssh -T git@github.com
 git config --global user.name $user_name
 git config --global user.email $mail_address
 git config --global pull.rebase false
+git config --global push.default current
 
 cat <<-EOF >> $HOME/.gitconfig
 [url "github:"]

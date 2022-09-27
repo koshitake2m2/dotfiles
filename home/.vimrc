@@ -45,7 +45,7 @@ set shiftwidth=4
 " key map "
 " inoremap <ESC> <ESC>:set iminsert=2<CR>
 
-" normal mode --------------------------
+" normal mode & visual mode --------------------------
 noremap <C-h> <BS>
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -57,7 +57,12 @@ noremap sk <C-w>k
 noremap sl <C-w>l 
 noremap sw <C-w>w 
 
-" end normal mode --------------------------
+" \n "
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
+" end normal mode & visual mode --------------------------
 
 
 " insert mode ----------------------
@@ -88,21 +93,6 @@ cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 
 " end command-line mode ========
-
-" \n "
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k
-
-" save and quit "
-nnoremap ZZ <Nop>
-
-" no save and quit "
-nnoremap ZQ <Nop>
-
-" ex mode "
-nnoremap Q <Nop>
 
 " command "
 command Hello echo 'hello, world!'

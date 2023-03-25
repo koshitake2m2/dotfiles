@@ -4,12 +4,12 @@
 # homebrew
 # TODO: インストールに失敗したアプリをリストアップするように検討.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
-    && eval "$(/opt/homebrew/bin/brew shellenv)"
+    && eval "$(/usr/local/bin/brew shellenv)"
 
 # brew bundle 経由の場合
 # NOTE: `brew bundle dump` でBrewfileをdumpできる
 brew bundle --file=Brewfile_work
-cs setup
+# cs setup # bundleでインストールする場合
 
 # brew install手作業の場合
 brew install cask
@@ -25,6 +25,7 @@ brew install intellij-idea-ce
 brew tap homebrew/cask-versions
 brew install adoptopenjdk8
 brew install discord
+brew install raycast
 brew install coursier/formulas/coursier && cs setup
 
 echo "homebrew done..."

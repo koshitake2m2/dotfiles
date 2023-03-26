@@ -86,6 +86,8 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores True
 # 隠しファイルを表示するようにする.
 defaults write com.apple.finder AppleShowAllFiles TRUE
 killall Finder
+# 連続入力
+defaults write -g ApplePressAndHoldEnabled -bool false
 ```
 
 

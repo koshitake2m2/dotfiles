@@ -38,15 +38,16 @@ anyenv install --force-init \
     && exec $SHELL -l
 cat <<EOF
 # TODO: 以下, 手入力.
-anyenv install nodenv \
-    && anyenv install pyenv \
+anyenv install pyenv \
     && anyenv install jenv \
+    && anyenv install rbenv \
     && exec $SHELL -l
 # TODO: 以下, 手入力.
 jenv add $(/usr/libexec/java_home -v "1.8")
 jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
 jenv global corretto64-1.8.0.332
 
+# TODO: replace nodenv to volta
 nodenv install 14.15.5 \
     && nodenv global 14.15.5 \
     && npm install -g yarn

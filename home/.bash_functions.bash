@@ -52,7 +52,15 @@ function make_tex_pdf(){
     # $1 = input.md, $2 = output.md
     docker run -it --rm -v `pwd`:/workspace kumassy/alpine-pandoc-ja pandoc $1 -f markdown -o $2 --pdf-engine=lualatex
 }
-
+function checkpr () {
+	git checkout main;
+	git branch -D pr$1;
+	git fetch origin pull/$1/head:pr$1;
+	git checkout pr$1;
+}
+function git_recent_branch() {
+    git --no-pager branch --sort=committerdate | tail -n ${1:-"20"} | tac;
+}
 
 if [[ "$(uname)" == 'Darwin' ]]; then
     function cdf (){

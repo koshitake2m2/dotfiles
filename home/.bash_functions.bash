@@ -59,7 +59,7 @@ function checkpr () {
 	git checkout pr$1;
 }
 function git_recent_branch() {
-    git --no-pager branch --sort=committerdate | tail -n ${1:-"20"} | tac;
+    git --no-pager branch --sort=-committerdate | head -n ${1:-"10"};
 }
 
 if [[ "$(uname)" == 'Darwin' ]]; then

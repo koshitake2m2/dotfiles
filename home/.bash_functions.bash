@@ -61,6 +61,10 @@ function checkpr () {
 function git_recent_branch() {
     git --no-pager branch --sort=-committerdate | head -n ${1:-"10"};
 }
+function backup_dir () {
+    target_dir=$1
+    zip -e -r $HOME/$target_dir$(date +"%Y%m%d").zip $HOME/$target_dir -x "*node_modules*" -x "*.git*" -x "*/target/*"
+}
 
 if [[ "$(uname)" == 'Darwin' ]]; then
     function cdf (){

@@ -99,6 +99,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 - シェルの終了時、正常終了でタブを閉じる
 - Icebergをcloneしてファイルを開く. それからカラーをデフォルトにする
   - Iceberg: https://gist.github.com/cocopon/a04be63f5e0856daa594702299c13160 (2019-7-17)
+  - official: https://github.com/cocopon/iceberg.vim
 
 ```bash
 git clone https://gist.github.com/a04be63f5e0856daa594702299c13160.git

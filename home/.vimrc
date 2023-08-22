@@ -1,4 +1,5 @@
 " setting "
+set clipboard+=unnamed
 
 " title "
 set title

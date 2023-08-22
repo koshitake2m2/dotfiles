@@ -1,5 +1,6 @@
 " setting "
 "
+set clipboard=unnamed
 
 """""""""""
 set multiple-cursors

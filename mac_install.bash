@@ -15,6 +15,7 @@ brew bundle --file=Brewfile_work
 brew install cask
 brew install peco
 brew install vim
+brew install neovim
 brew install google-chrome
 brew install vivaldi
 brew install slack

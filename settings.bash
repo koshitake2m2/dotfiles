@@ -41,3 +41,8 @@ if [[ $(basename $SHELL) = "zsh" \
     source ./only_zsh_settings.zsh
 fi
 
+# nvim setting
+mkdir -p $HOME/.config/nvim
+touch init.vim
+echo "source ~/.vimrc" > init.vim
+

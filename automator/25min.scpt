@@ -1,8 +1,10 @@
+display notification "作業開始！"
+
 -- 25分待つぜ〜！
 delay 25 * 60
 
 display dialog "休憩〜〜〜！！！"
--- display notification "休憩〜〜〜！！！"
+display notification "休憩〜〜〜！！！"
 
 -- リピートするぜ〜！
 -- repeat with i from 1 to 12

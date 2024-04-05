@@ -27,6 +27,7 @@ brew tap homebrew/cask-versions
 brew install adoptopenjdk8
 brew install discord
 brew install raycast
+brew install iterm2
 brew install coursier/formulas/coursier && cs setup
 
 echo "homebrew done..."

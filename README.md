@@ -1,8 +1,9 @@
 # README.md
 
-自分用にbashやzsh等をセットアップします。主に設定ファイルをホームディレクトリ以下に置くスクリプトです。  
+自分用に bash や zsh 等をセットアップします。主に設定ファイルをホームディレクトリ以下に置くスクリプトです。
 
 # Usage
+
 ```bash
 ## githubの設定を済ませてから
 git clone https://github.com/koshitake2m2/dotfiles.git
@@ -17,9 +18,11 @@ zsh settings.bash prezto
 ```
 
 # その他共通セットアップ
+
 以下、その他セットアップ
 
 ## github
+
 ```bash
 user_name="hello"
 mail_address="hello@sample.com"
@@ -53,12 +56,13 @@ cat <<-EOF >> $HOME/.gitconfig
 EOF
 ```
 
-# その他macセットアップ
+# その他 mac セットアップ
 
 ## キーボード・トラックパッド・アクセシビリティ
+
 - キーボード
   - 地球儀キーを押して何もしない
-- Fnキー
+- Fn キー
 - 三本指ドラッグ
 - キーリピート
 - バックスラッシュ
@@ -69,16 +73,18 @@ EOF
   - ABC: 削除
 
 ## Mission Control
+
 - 「最新の使用状況に基づいて操作スペースを自動的に並び替える」のチェックを外す
 
-## Dockとメニューバー
+## Dock とメニューバー
+
 - 「画面上の位置」を左にチェック
-- 「Dockを自動的に表示/非表示」をチェック
+- 「Dock を自動的に表示/非表示」をチェック
 - 「キーボードの輝度」をオフ
 - 「Bluetooth」をメニューバーに表示
 - 「バッテリー」の割合(%)を表示
 
-## Finderの設定
+## Finder の設定
 
 ```bash
 # .DS_Storeを生成しない.
@@ -90,28 +96,34 @@ killall Finder
 defaults write -g ApplePressAndHoldEnabled -bool false
 ```
 
-
 ## docker
+
 1. https://docs.docker.com/desktop/mac/install/ からインストール
 2. 開いてサインイン
 
 ## ターミナル
+
 - シェルの終了時、正常終了でタブを閉じる
-- Icebergをcloneしてファイルを開く. それからカラーをデフォルトにする
-  - Iceberg: https://gist.github.com/cocopon/a04be63f5e0856daa594702299c13160 (2019-7-17)
+- Iceberg を clone してファイルを開く. それからカラーをデフォルトにする
+  - Iceberg
+    - https://gist.github.com/cocopon/a04be63f5e0856daa594702299c13160 (2019-7-17)
+    - https://github.com/Arc0re/Iceberg-iTerm2.git
   - official: https://github.com/cocopon/iceberg.vim
 
 ```bash
 git clone https://gist.github.com/a04be63f5e0856daa594702299c13160.git
+git clone https://github.com/Arc0re/Iceberg-iTerm2.git
 ```
 
 ## 各種インストール
+
 - chrome
 - slack
 
 # 参考
+
 以下、参考サイトです。
 
 ### git-prompt, git-completion
-https://github.com/git/git/tree/master/contrib/completion (2019-7-17)  
 
+https://github.com/git/git/tree/master/contrib/completion (2019-7-17)

@@ -43,6 +43,7 @@ cat <<EOF
 anyenv install pyenv \
     && anyenv install jenv \
     && anyenv install rbenv \
+    && anyenv install goenv \
     && exec $SHELL -l
 # TODO: 以下, 手入力.
 jenv add $(/usr/libexec/java_home -v "1.8")

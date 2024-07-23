@@ -46,6 +46,7 @@ anyenv install pyenv \
     && anyenv install goenv \
     && exec $SHELL -l
 # TODO: 以下, 手入力.
+git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 jenv add $(/usr/libexec/java_home -v "1.8")
 jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
 jenv global corretto64-1.8.0.332

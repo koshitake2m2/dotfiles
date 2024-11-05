@@ -23,28 +23,33 @@ brew install anyenv
 brew install visual-studio-code
 brew install docker
 brew install intellij-idea-ce
-brew tap homebrew/cask-versions
 brew install adoptopenjdk8
 brew install discord
 brew install raycast
 brew install iterm2
+brew install clipy
+brew install rectangle
 brew install coursier/formulas/coursier && cs setup
 
 echo "homebrew done..."
 
+# TODO: 以下, 手入力.
 # anyenv
-# TODO: `exec $SHELL -l`で中断してしまうので要検討.
 # NOTE: `$HOME/.config/anyenv/anyenv-install`が存在する場合, 以下のコマンドは通らない.
+# NOTE: `exec $SHELL -l`で中断してしまうので要検討.
 anyenv install --force-init \
     && eval "$(anyenv init -)" \
     && exec $SHELL -l
-cat <<EOF
+
+exit
+
 # TODO: 以下, 手入力.
 anyenv install pyenv \
     && anyenv install jenv \
     && anyenv install rbenv \
     && anyenv install goenv \
     && exec $SHELL -l
+
 # TODO: 以下, 手入力.
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 jenv add $(/usr/libexec/java_home -v "1.8")
@@ -58,5 +63,4 @@ nodenv install 14.15.5 \
 pyenv install 3.9.1 \
     && pyenv global 3.9.1 \
     && exec $SHELL -l
-EOF
 

@@ -14,7 +14,9 @@ bash settings.bash
 
 # if you use macOS
 zsh settings.bash prezto
-# zsh mac_install.bash # 調整中のためこのファイルを見ながら手動でインストール…
+
+# 調整中のためこのファイルを見ながら手動でインストール…
+# zsh mac_install.bash
 ```
 
 # その他共通セットアップ
@@ -24,10 +26,12 @@ zsh settings.bash prezto
 ## github
 
 ```bash
+# 1. Set local vars.
 user_name="hello"
 mail_address="hello@sample.com"
 
-# 秘密鍵のパス: $HOME/.ssh/id_rsa_github
+# 2.
+## 秘密鍵のパス: $HOME/.ssh/id_rsa_github
 ssh-keygen -t rsa -b 4096 -C $mail_address < <(echo $HOME/.ssh/id_rsa_github)
 
 cat <<-EOF > $HOME/.ssh/config
@@ -38,12 +42,15 @@ Host github
 EOF
 
 ssh-add $HOME/.ssh/id_rsa_github
-# githubに公開鍵を追加
 cat .ssh/id_rsa_github.pub | pbcopy
 
 
+# 3. githubに公開鍵を追加
+
+# 4.
 ssh -T git@github.com
 
+# 5.
 git config --global user.name $user_name
 git config --global user.email $mail_address
 git config --global pull.rebase false
@@ -91,9 +98,11 @@ EOF
 defaults write com.apple.desktopservices DSDontWriteNetworkStores True
 # 隠しファイルを表示するようにする.
 defaults write com.apple.finder AppleShowAllFiles TRUE
-killall Finder
 # 連続入力
 defaults write -g ApplePressAndHoldEnabled -bool false
+
+killall Finder
+# 他のアプリに反映させれてなかったらそのアプリを再起動しよう
 ```
 
 ## docker
@@ -111,6 +120,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
   - official: https://github.com/cocopon/iceberg.vim
 
 ```bash
+cd tmp
 git clone https://gist.github.com/a04be63f5e0856daa594702299c13160.git
 git clone https://github.com/Arc0re/Iceberg-iTerm2.git
 ```

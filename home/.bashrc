@@ -33,15 +33,16 @@ if [[ $(basename $SHELL) = "bash" \
 fi
 
 
-# umask 077
-umask 077
+# umask
+umask 022
 
 # expand_aliases
 shopt -s expand_aliases
 
+echo "read .bashrc"
+
 # Source .bash_local_settings.bash
 if [[ -f ~/.bash_local_settings.bash ]]; then
 	. ~/.bash_local_settings.bash
+    echo "read .bash_local_settings.bash"
 fi
-
-echo "read .bashrc"

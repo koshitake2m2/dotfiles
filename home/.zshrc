@@ -25,11 +25,6 @@ if [[ -f ~/.zsh_local_settings.zsh ]]; then
 	source ~/.zsh_local_settings.zsh
 fi
 
-# Source .bash_local_settings.bash
-if [[ -f ~/.bash_local_settings.bash ]]; then
-	source ~/.bash_local_settings.bash
-fi
-
 # Source .bash_aliases.bash
 if [[ -f ~/.bash_aliases.bash ]]; then
 	source ~/.bash_aliases.bash
@@ -51,8 +46,8 @@ precmd() {
 
 # Customize to your needs...
 
-# umask 077
-umask 077
+# umask
+umask 022
 
 
 # --- コマンド履歴 ---
@@ -99,3 +94,10 @@ unsetopt correct
 # --- end その他 ---
 #
 echo "read .zshrc"
+
+# Source .bash_local_settings.bash
+# Overriding settings
+if [[ -f ~/.bash_local_settings.bash ]]; then
+	source ~/.bash_local_settings.bash
+  echo "read .bash_local_settings.bash"
+fi

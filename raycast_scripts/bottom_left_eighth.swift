@@ -84,7 +84,8 @@ func moveActiveWindowToTopLeftEighth() {
 
     // 画面を縦4列×横2行に分割 → 左下(1列目1行目)に移動
     let targetWidth = screenFrame.width / 4
-    let targetHeight = screenFrame.height / 2
+    let titleBarHeight: CGFloat = 24
+    let targetHeight = screenFrame.height / 2 - titleBarHeight / 2
     let targetOrigin: CGPoint
     if topLeftPoint.y >= 0 {
         targetOrigin = CGPoint(x: screenFrame.minX,

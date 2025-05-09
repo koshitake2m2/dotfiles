@@ -72,7 +72,9 @@ func moveActiveWindowToTopLeftEighth() {
     let screenFrame = screen.frame
 
     let targetWidth = screenFrame.width / 4
-    let targetHeight = screenFrame.height / 2
+    let titleBarHeight: CGFloat = 24
+    let targetHeight = screenFrame.height / 2 - titleBarHeight / 2
+
     let targetOrigin: CGPoint
     if topLeftPoint.y >= 0 {
         targetOrigin = CGPoint(x: screenFrame.minX,
@@ -80,6 +82,7 @@ func moveActiveWindowToTopLeftEighth() {
     } else {
         targetOrigin = CGPoint(x: screenFrame.minX,
                                y: -screenFrame.height)
+    }
 
     var newOrigin = CGPoint(x: targetOrigin.x, y: targetOrigin.y)
     var newSize = CGSize(width: targetWidth, height: targetHeight)

@@ -1,4 +1,4 @@
- #!/bin/zsh
+#!/bin/zsh
 
 # Required parameters:
 # @raycast.schemaVersion 1
@@ -8,5 +8,4 @@
 # Optional parameters:
 # @raycast.icon 📅
  
- open -na 'Google Chrome' --args --profile-directory="Profile 1" 'https://calendar.google.com/calendar/u/0/r/week'
-
+open -na 'Google Chrome' --args --profile-directory="Profile 1" 'https://calendar.google.com/calendar/u/0/r/week'
